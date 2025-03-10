@@ -25,6 +25,13 @@ int NWD(int lhs, int rhs) {
 }
 
 int NWW(int lhs, int rhs) {
-    // TODO: Implement me :)
-    return -1;
+    if (lhs == 0 || rhs == 0) {
+        return 0;
+    } else {
+        auto result = lhs / NWD(lhs, rhs) * rhs;
+        if (result < 0) {
+            return (result * (-1));
+        } else
+            return result;
+    }
 }
